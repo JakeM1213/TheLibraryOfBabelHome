@@ -1,0 +1,68 @@
+body, html {
+    min-height: 100%;
+    margin: 0;
+    font-family: monospace;
+    overflow-x: hidden;
+    color: white; 
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    margin-top: 50vh;
+}
+
+.text {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.reversed {
+    display: block;
+    transform: scaleY(-1);
+}
+
+.tv-box {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: black;
+    margin: 20px auto; 
+    border: 3px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-text {
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+.enter-text {
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    animation: flash 1s infinite;
+    cursor: pointer; 
+}
+
+.enter-text:hover {
+    text-decoration: underline; 
+}
