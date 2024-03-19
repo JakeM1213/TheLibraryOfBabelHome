@@ -7,20 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, {threshold: 1.0});
 
-    
-    const lastTvBox = document.querySelector('.tv-box:last-of-type');
-    if (lastTvBox) {
-        observer.observe(lastTvBox);
+    function observeLastTvBox() {
+        const lastTvBox = document.querySelector('.tv-box:last-of-type');
+        if (lastTvBox) {
+            observer.observe(lastTvBox);
+        }
     }
 
     function addMoreContent() {
         const newTvBox = document.createElement('div');
         newTvBox.className = 'tv-box';
-        newTvBox.innerHTML = '<span class="enter-text">ENTER</span>';
+        newTvBox.innerHTML = '<a href="https://jakem1213.github.io/TheLibraryOfBabelFeed/" class="enter-text">ENTER</a>';
         document.body.appendChild(newTvBox);
 
-       
-        observer.unobserve(lastTvBox);
-        observer.observe(newTvBox);
-    }
+        observer.disconnect();
+        observeLastTvBox();
+    } 
+
+    observeLastTvBox();
 });
