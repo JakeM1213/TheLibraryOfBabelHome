@@ -1,3 +1,19 @@
+
+ 
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://jakem1213.github.io/JakeMorosiniPortfolio/') {
+      return; 
+    }
+
+    console.log('Message received from parent:', event.data);
+
+    event.source.postMessage('Hello from the child page', event.origin);
+  });
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
